@@ -28,7 +28,7 @@ Remove temp file
     names(steps1) <- c("date","steps")
     qplot(steps1$steps,bins=50)
 
-![](Assign1_files/figure-markdown_strict/unnamed-chunk-6-1.png)
+![](Assign1_files/figure-markdown_strict/hist-1.png)
 
 ### 3. Median and mean of steps taken each day
 
@@ -44,7 +44,7 @@ median = 10395; mean = 9354
     dataNArm <- data[!is.na(data$steps),]
     ggplot(dataNArm, aes(interval,steps))+geom_point()
 
-![](Assign1_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+![](Assign1_files/figure-markdown_strict/tSeries-1.png)
 
 ### 5. The 5-minute interval that, on average, contains the maximum number of steps
 
@@ -89,7 +89,7 @@ interval
 
     qplot(dataNew2$sum,bins = 30)
 
-![](Assign1_files/figure-markdown_strict/unnamed-chunk-12-1.png)
+![](Assign1_files/figure-markdown_strict/unnamed-chunk-10-1.png)
 
 6e. Find median and mean for imputed data
 
@@ -112,7 +112,7 @@ Make a time series plot (i.e. type="l") of the 5-minute interval
     gg <- ggplot(dataWeekend,aes(interval,mean))
     gg + geom_line()+facet_grid(weekend~.)
 
-![](Assign1_files/figure-markdown_strict/unnamed-chunk-14-1.png)
+![](Assign1_files/figure-markdown_strict/unnamed-chunk-12-1.png)
 
 Which 5-minute interval, on average across all the days in the dataset,
 contains the maximum number of steps?
