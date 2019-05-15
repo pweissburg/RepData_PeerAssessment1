@@ -26,7 +26,7 @@ Remove temp file
               group_by(date) %>%
               summarise(sum(steps,na.rm = TRUE))
     names(steps1) <- c("date","steps")
-    qplot(steps1$steps,bins = 50)
+    qplot(steps1$steps,bins=50)
 
 ![](Assign1_files/figure-markdown_strict/unnamed-chunk-6-1.png)
 
