@@ -1,8 +1,11 @@
 ---
 title: "Assignment1"
 author: "Paul Weissburg"
-date: "May 14, 2019"
-output: html_document
+date: "May 15, 2019"
+output: 
+  html_document:
+    keep_md: true
+  
 ---
 
 ```{r setup, include=FALSE}
@@ -38,12 +41,12 @@ Remove temp file
 unlink(temp)
 ```
 ### 2. Histogram of # of steps taken each day
-```{r}
+```{r hist}
 steps1 <- data %>%
           group_by(date) %>%
           summarise(sum(steps,na.rm = TRUE))
 names(steps1) <- c("date","steps")
-qplot(steps1$steps,bins = 50)
+qplot(steps1$steps,bins=30)
 ```
 
 ### 3. Median and mean of steps taken each day
@@ -54,7 +57,7 @@ summary(steps1$steps)
 median = 10395; mean = 9354
 
 ### 4. Time series plot of number of steps taken
-```{r, include=TRUE}
+```{r tSeries, include=TRUE}
 dataNArm <- data[!is.na(data$steps),]
 ggplot(dataNArm, aes(interval,steps))+geom_point()
 ```
